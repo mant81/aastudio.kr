@@ -1,4 +1,14 @@
 (() => {
+  const motionButton = document.querySelector('.motion-toggle');
+  if (motionButton) {
+    motionButton.addEventListener('click', () => {
+      const paused = document.querySelector('.hero').classList.toggle('motion-paused');
+      motionButton.setAttribute('aria-pressed', String(paused));
+      motionButton.setAttribute('aria-label', paused ? '배경 모션 재생' : '배경 모션 일시정지');
+      motionButton.querySelector('span').textContent = paused ? 'OFF' : 'ON';
+      motionButton.querySelector('i').textContent = paused ? '▷' : 'Ⅱ';
+    });
+  }
   const config = window.AASTUDIO_CONFIG || {};
   const safeUrl = value => {
     try { const url = new URL(value); return url.protocol === 'https:' ? url.href : null; }

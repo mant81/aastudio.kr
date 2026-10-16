@@ -28,3 +28,31 @@
 @media(min-width:1800px){.hero-stage h1{font-size:132px}}
 @media(max-width:1000px) and (min-width:601px){.hero-stage{grid-template-columns:minmax(0,1fr) 230px;gap:24px;padding:46px 0 34px}.hero-stage h1{font-size:7.6vw}.hero-stage .hero-period{transform:translate(7px,15px)}.hero-map-key{font-size:7px}.hero-bottom{grid-template-columns:minmax(0,1fr) 230px;gap:24px}.hero-bottom>p:first-child{font-size:20px}.hero-bottom .hero-description{font-size:10px}.hero-bottom .circle-link{left:auto;right:270px;width:40px;height:40px}}
 @media(max-width:600px){.hero-stage{grid-template-columns:1fr;gap:28px;padding:34px 0 26px}.hero-stage h1{font-size:12vw;letter-spacing:-.065em;line-height:1.12}.hero-stage .hero-period{transform:translate(7px,12px)}.hero-map{display:grid;grid-template-columns:1fr 1.2fr;align-items:center;position:relative;padding:18px 0 0;border-top:1px solid var(--line);min-height:150px}.hero-map-caption{align-self:start;flex-direction:column;gap:8px;font-size:7px;line-height:1.5}.hero-map svg{grid-column:2;grid-row:1/3;width:100%;max-height:160px;margin:0}.hero-map-key{grid-column:1;grid-row:2;flex-direction:column;gap:7px;font-size:9px;align-self:end;padding-bottom:8px}.hero-bottom{grid-template-columns:1fr 44px;gap:19px;padding:24px 0 27px}.hero-bottom>p:first-child{grid-column:1;font-size:20px;padding-left:14px}.hero-bottom .hero-description{grid-column:1/3;font-size:11px;padding-left:16px}.hero-bottom .circle-link{position:static;grid-column:2;grid-row:1;width:42px;height:42px;align-self:center;font-size:22px}.hero-index{font-size:6px;letter-spacing:.4px}}
+
+/* Slow, coordinated motion; layout and readable text remain stable. */
+.hero-line,.hero-word{display:inline-block;animation:hero-arrive 1.1s cubic-bezier(.2,.65,.25,1) both}
+.hero-word{animation-delay:.18s;position:relative}
+.hero-word::after{content:'';position:absolute;left:3%;right:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent,var(--orange),transparent);transform:scaleX(0);transform-origin:left;opacity:0;animation:word-accent 8s ease-in-out 1.2s infinite}
+.hero-map svg{animation:map-arrive 1.6s ease-out both}
+.map-orbit{stroke-dasharray:572;stroke-dashoffset:0;animation:orbit-draw 2s cubic-bezier(.25,.6,.3,1) both}
+.map-orbit.map-phase-2{animation-delay:.2s}.map-orbit.map-phase-3{animation-delay:.4s}
+.map-signal{stroke:var(--orange);stroke-width:1.5;stroke-linecap:round;stroke-dasharray:7 93;animation:signal-travel 6s linear infinite;opacity:.8}
+.map-node{transform-box:fill-box;transform-origin:center;animation:node-awake 6s ease-in-out infinite}
+.map-label{animation:label-awake 6s ease-in-out infinite}
+.map-node.map-phase-1,.map-label.map-phase-1{animation-delay:0s}
+.map-node.map-phase-2,.map-label.map-phase-2{animation-delay:2s}
+.map-node.map-phase-3,.map-label.map-phase-3{animation-delay:4s}
+.map-center{transform-origin:180px 154px;animation:center-turn 12s cubic-bezier(.45,0,.2,1) infinite}
+.motion-toggle{appearance:none;border:0;padding:0;background:none;color:var(--muted);font:inherit;letter-spacing:1px;display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+.motion-toggle span{color:var(--olive)}.motion-toggle i{font-style:normal;color:var(--orange);font-size:10px;letter-spacing:-2px;margin-left:3px}
+.motion-toggle:hover{color:var(--ink)}.motion-toggle:focus-visible{outline:2px solid var(--orange);outline-offset:5px}
+.hero.motion-paused *,.hero.motion-paused *::after{animation-play-state:paused!important}
+@keyframes hero-arrive{from{opacity:0;transform:translateY(18px);filter:blur(3px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes map-arrive{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes orbit-draw{from{stroke-dashoffset:572;opacity:0}to{stroke-dashoffset:0;opacity:1}}
+@keyframes word-accent{0%,65%,100%{transform:scaleX(0);opacity:0}12%,40%{transform:scaleX(1);opacity:.6}55%{transform:scaleX(1);opacity:0}}
+@keyframes signal-travel{from{stroke-dashoffset:0}to{stroke-dashoffset:-100}}
+@keyframes node-awake{0%,28%,100%{fill:var(--olive);transform:scale(1)}8%,18%{fill:var(--orange);transform:scale(1.5)}}
+@keyframes label-awake{0%,28%,100%{fill:var(--ink)}8%,18%{fill:var(--orange)}}
+@keyframes center-turn{0%,35%{transform:rotate(0)}50%,85%{transform:rotate(60deg)}100%{transform:rotate(120deg)}}
+@media(prefers-reduced-motion:reduce){.hero *,.hero *::after{animation:none!important}.hero-word::after{display:none}.motion-toggle{display:none}}

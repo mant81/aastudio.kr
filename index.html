@@ -18,19 +18,20 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="eyebrow"><span class="status-dot"></span> INDEPENDENT IDEAS. CONNECTED SYSTEMS.</div>
       <div class="hero-stage">
-        <h1 id="hero-title">A practice of<br><em>possibilities.</em><span class="hero-period" aria-hidden="true">*</span></h1>
-        <div class="hero-map" aria-hidden="true">
-          <div class="hero-map-caption"><span>THE TRIPLE A</span><span>01 — 03</span></div>
-          <svg viewBox="0 0 360 300" fill="none">
+        <h1 id="hero-title"><span class="hero-line">A practice of</span><br><em class="hero-word">possibilities.</em><span class="hero-period" aria-hidden="true">*</span></h1>
+        <div class="hero-map">
+          <div class="hero-map-caption"><span>THE TRIPLE A</span><button class="motion-toggle" type="button" aria-label="배경 모션 일시정지" aria-pressed="false">MOTION <span>ON</span><i aria-hidden="true">Ⅱ</i></button></div>
+          <svg viewBox="0 0 360 300" fill="none" aria-hidden="true">
             <path class="map-guide" d="M180 24V278M35 158H325"/>
-            <circle class="map-orbit" cx="144" cy="127" r="91"/>
-            <circle class="map-orbit" cx="216" cy="127" r="91"/>
-            <circle class="map-orbit" cx="180" cy="189" r="91"/>
+            <circle class="map-orbit map-phase-1" cx="144" cy="127" r="91"/>
+            <circle class="map-orbit map-phase-2" cx="216" cy="127" r="91"/>
+            <circle class="map-orbit map-phase-3" cx="180" cy="189" r="91"/>
             <path class="map-triangle" d="M110 96 250 96 180 219Z"/>
-            <circle class="map-node" cx="110" cy="96" r="4"/>
-            <circle class="map-node" cx="250" cy="96" r="4"/>
-            <circle class="map-node" cx="180" cy="219" r="4"/>
-            <text x="91" y="81">AA</text><text x="246" y="81">AI</text><text x="165" y="244">ASF</text>
+            <path class="map-signal" pathLength="100" d="M110 96 250 96 180 219Z"/>
+            <circle class="map-node map-phase-1" cx="110" cy="96" r="4"/>
+            <circle class="map-node map-phase-2" cx="250" cy="96" r="4"/>
+            <circle class="map-node map-phase-3" cx="180" cy="219" r="4"/>
+            <text class="map-label map-phase-1" x="91" y="81">AA</text><text class="map-label map-phase-2" x="246" y="81">AI</text><text class="map-label map-phase-3" x="165" y="244">ASF</text>
             <path class="map-center" d="M180 139V169M167 146 193 162M167 162 193 146"/>
           </svg>
           <div class="hero-map-key"><span>Architecture</span><span>Intelligence</span><span>Industry</span></div>
