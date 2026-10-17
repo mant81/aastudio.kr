@@ -18,9 +18,9 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="eyebrow"><span class="status-dot"></span> INDEPENDENT IDEAS. CONNECTED SYSTEMS.</div>
       <div class="hero-stage">
-        <h1 id="hero-title"><span class="hero-line">A practice of</span><br><em class="hero-word">possibilities.</em><span class="hero-period" aria-hidden="true">*</span></h1>
+        <h1 id="hero-title" aria-label="A practice of possibilities."><span class="hero-line-clip" aria-hidden="true"><span class="hero-line">A practice of</span></span><br><em class="hero-word" aria-hidden="true">possibilities.</em><span class="hero-period" aria-hidden="true"><span class="hero-asterisk">✳</span></span></h1>
         <div class="hero-map">
-          <div class="hero-map-caption"><span>THE TRIPLE A</span><button class="motion-toggle" type="button" aria-label="배경 모션 일시정지" aria-pressed="false">MOTION <span>ON</span><i aria-hidden="true">Ⅱ</i></button></div>
+          <div class="hero-map-caption"><span>THE TRIPLE A</span><button class="motion-toggle" type="button" aria-label="모션 일시정지" aria-pressed="false">MOTION <span>ON</span><i aria-hidden="true">Ⅱ</i></button></div>
           <svg viewBox="0 0 360 300" fill="none" aria-hidden="true">
             <path class="map-guide" d="M180 24V278M35 158H325"/>
             <circle class="map-orbit map-phase-1" cx="144" cy="127" r="91"/>
@@ -45,17 +45,54 @@
       <article class="studio architecture">
         <div class="studio-number">01 / ARCHITECTURE</div>
         <div class="studio-copy"><h3>AA<span>Studio</span></h3><p class="studio-tagline">생각에 구조를 더하다.</p><p class="body-copy">아이디어를 다이어그램으로, 데이터를 모델로.<br>시스템의 관계를 시각화하고 설계의 흐름을 이어갑니다.</p><a class="text-link" href="#tools">설계를 위한 도구 살펴보기 <span>↗</span></a></div>
-        <div class="visual blueprint" aria-label="구조와 관계를 표현한 아키텍처 다이어그램" role="img"><svg viewBox="0 0 400 270" fill="none"><g stroke="currentColor" stroke-width="1"><path d="M80 94 200 25 320 94 200 163Z M80 94v92l120 69 120-69V94 M200 163v92 M80 140l120 69 120-69 M140 59v92l120 69 M260 59v92l-120 69"/><path stroke-dasharray="3 5" d="M80 186 200 117l120 69 M200 25v92"/><path d="M45 208V75l155-89M345 208V75 M66 226l134 77 134-77" opacity=".25"/></g><g fill="currentColor"><circle cx="80" cy="94" r="4"/><circle cx="200" cy="25" r="4"/><circle cx="320" cy="94" r="4"/><circle cx="200" cy="163" r="4"/><circle cx="200" cy="255" r="4"/></g></svg><span>STRUCTURE → CLARITY</span></div>
+        <div class="visual blueprint" aria-label="회색 도형 위로 컬러 선이 차례로 그려지는 아키텍처 다이어그램" role="img">
+          <svg viewBox="0 0 400 270" fill="none" aria-hidden="true">
+            <g class="blueprint-base" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M80 94 200 25 320 94 200 163Z M80 94v92l120 69 120-69V94 M200 163v92 M80 140l120 69 120-69 M140 59v92l120 69 M260 59v92l-120 69"/>
+              <path stroke-dasharray="3 5" d="M80 186 200 117l120 69 M200 25v92"/>
+              <g fill="currentColor" stroke="none"><circle cx="80" cy="94" r="4"/><circle cx="200" cy="25" r="4"/><circle cx="320" cy="94" r="4"/><circle cx="200" cy="163" r="4"/><circle cx="200" cy="255" r="4"/></g>
+            </g>
+            <g stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              <path class="blueprint-guides" d="M45 208V75l155-89M345 208V75 M66 226l134 77 134-77" opacity=".25"/>
+              <path class="blueprint-hidden" stroke-dasharray="3 5" d="M80 186 200 117l120 69 M200 25v92"/>
+              <path class="blueprint-edge blueprint-top" pathLength="1" d="M80 94 200 25 320 94 200 163Z"/>
+              <path class="blueprint-edge blueprint-left" pathLength="1" d="M80 94v92l120 69v-92"/>
+              <path class="blueprint-edge blueprint-right" pathLength="1" d="M200 255l120-69V94"/>
+              <path class="blueprint-edge blueprint-grid" pathLength="1" d="M80 140l120 69 120-69"/>
+              <path class="blueprint-edge blueprint-grid" pathLength="1" d="M140 59v92l120 69"/>
+              <path class="blueprint-edge blueprint-grid" pathLength="1" d="M260 59v92l-120 69"/>
+            </g>
+            <path class="blueprint-tracer" pathLength="1" d="M80 94 200 25 320 94 200 163Z" stroke="var(--orange)" stroke-width="2" stroke-linecap="round"/>
+            <g class="blueprint-nodes" fill="currentColor"><circle cx="80" cy="94" r="4"/><circle cx="200" cy="25" r="4"/><circle cx="320" cy="94" r="4"/><circle cx="200" cy="163" r="4"/><circle cx="200" cy="255" r="4"/></g>
+          </svg>
+          <span>STRUCTURE → CLARITY</span>
+        </div>
       </article>
       <article class="studio intelligence">
         <div class="studio-number">02 / ARTIFICIAL INTELLIGENCE</div>
         <div class="studio-copy"><h3>AI<span>Studio</span></h3><p class="studio-tagline">가능성을 실제의 도구로.</p><p class="body-copy">반복되는 일은 가볍게, 중요한 판단은 더 깊게.<br>AI를 활용한 새로운 서비스와 솔루션을 만들어갑니다.</p><span class="coming">IN DEVELOPMENT <span>개발 중</span></span></div>
-        <div class="visual intelligence-art" aria-label="여러 신호가 하나의 중심으로 연결되는 AI 그래픽" role="img"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="orb orb-three"></div><span>INPUT → POSSIBILITY</span><b>ai<span>✳</span></b></div>
+        <div class="visual intelligence-art" aria-label="연결된 궤도를 따라 신호가 흐르고 중심의 AI가 반응하는 그래픽" role="img">
+          <div class="orb orb-one"></div><div class="orb orb-two"></div><div class="orb orb-three"></div>
+          <svg class="ai-network" viewBox="0 0 360 280" fill="none" aria-hidden="true">
+            <g class="ai-signals" stroke="var(--orange)" stroke-width="1.5" stroke-linecap="round">
+              <circle class="ai-signal" pathLength="100" cx="130" cy="140" r="104.5"/>
+              <circle class="ai-signal ai-signal-two" pathLength="100" cx="230" cy="140" r="104.5"/>
+              <ellipse class="ai-signal ai-signal-three" pathLength="100" cx="180" cy="140" rx="132" ry="69.5" transform="rotate(-35 180 140)"/>
+            </g>
+            <g fill="currentColor">
+              <circle class="ai-neuron" cx="130" cy="35.5" r="3"/>
+              <circle class="ai-neuron ai-neuron-two" cx="180" cy="48.2" r="3"/>
+              <circle class="ai-neuron ai-neuron-three" cx="230" cy="244.5" r="3"/>
+              <circle class="ai-neuron ai-neuron-four" cx="180" cy="231.8" r="3"/>
+            </g>
+          </svg>
+          <span>INPUT → POSSIBILITY</span><b aria-hidden="true">ai<span>✳</span></b>
+        </div>
       </article>
       <article class="studio factory">
         <div class="studio-number">03 / AI SMART FACTORY</div>
         <div class="studio-copy"><h3>ASF<span>Studio</span></h3><p class="studio-tagline">현장의 데이터가 다음의 기준으로.</p><p class="body-copy">AI와 제조 현장을 연결합니다.<br>QMS를 비롯한 제조·품질 관리 솔루션을 준비합니다.</p><span class="coming">IN DEVELOPMENT <span>개발 중</span></span></div>
-        <div class="visual factory-art" aria-label="제조 공정과 품질 확인을 표현한 그래픽" role="img"><div class="production"><i></i><i></i><i></i><i></i><i></i></div><div class="quality"><span>QUALITY MANAGEMENT</span><strong>Q<span>↗</span></strong><div>PROCESS <span>→</span> INSIGHT</div></div><span>DATA → BETTER DECISIONS</span></div>
+        <div class="visual factory-art" aria-label="공정 데이터가 차례로 흐르고 품질 검사가 진행되는 그래픽" role="img"><div class="production" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="quality" aria-hidden="true"><span>QUALITY MANAGEMENT</span><strong>Q<span>↗</span></strong><div>PROCESS <span>→</span> INSIGHT</div></div><span>DATA → BETTER DECISIONS</span></div>
       </article>
     </section>
     <section id="tools" class="tools" aria-labelledby="tools-title"><div class="section-top"><h2 id="tools-title">Less friction. More making.</h2><span>FREE WEB TOOLS / AA STUDIO</span></div><div class="tools-intro"><p>설계의 시작은,<br>가볍게.</p><span>브라우저에서 바로 사용하는 무료 도구.<br>새롭게 만들고 있는 AA Studio의 기능을 만나보세요.</span></div>
@@ -64,7 +101,7 @@
     </section>
     <section id="download" class="download" aria-labelledby="download-title"><div class="eyebrow">YOUR NEXT IDEA STARTS HERE.</div><div class="download-main"><h2 id="download-title">Make room<br>for <em>your ideas.</em></h2><div class="download-copy"><span class="edition">AA STUDIO / FREE EDITION</span><p>생각을 정리하고, 구조를 설계하는 공간.<br>AA Studio Free를 준비하고 있습니다.</p><a id="release-link" class="download-button unavailable" aria-disabled="true">무료 버전 출시 준비 중 <span>↓</span></a><span id="release-note" class="release-note">출시 후 GitHub Releases에서 다운로드할 수 있습니다.</span></div></div><div class="download-foot"><span>ARCHITECTURE IS JUST THE BEGINNING.</span><span class="asterisk" aria-hidden="true">✳</span></div></section>
   </main>
-  <footer><a class="wordmark" href="#">aa<span>studio</span><i>®</i></a><p>Architecture. Intelligence. Industry.</p><span>© <span id="year">2026</span> AASTUDIO</span><a href="#" class="back-top">BACK TO TOP ↑</a></footer>
+  <footer><a class="wordmark" href="#">aa<span>studio</span><i>®</i></a><p>Architecture. Intelligence. Industry.</p><span class="footer-contact">mant@nate.com</span><span>© <span id="year">2026</span> AASTUDIO</span><a href="#" class="back-top">BACK TO TOP ↑</a></footer>
   <script src="site-config.js"></script><script src="script.js"></script>
 </body>
 </html>

@@ -5,9 +5,9 @@
 | 파일 | 역할 |
 | --- | --- |
 | `index.html` | 사이트 구조·문구·SVG 그래픽 |
-| `style.css` | 색상·레이아웃·반응형 스타일 |
+| `style.css` | 색상·레이아웃·반응형 스타일·CSS 애니메이션 |
 | `site-config.js` | 공개 도구·다운로드 URL |
-| `script.js` | 링크 활성화·연도 표시 |
+| `script.js` | 제목 글자 분리·모션 제어·링크 활성화·연도 표시 |
 | `favicon.svg` | 브라우저 아이콘 |
 | `CNAME` | GitHub Pages 사용자 지정 도메인: aastudio.kr |
 | `.nojekyll` | Jekyll 처리 없이 정적 파일 제공 |
@@ -35,6 +35,42 @@ git diff --check
 브라우저에서는 PC와 모바일 너비를 모두 확인합니다. 메뉴의 섹션 이동, 가로 스크롤 발생 여부, 한국어 줄바꿈, 준비 중 표시와 실제 링크를 확인합니다. 서비스 프로세스는 새 작업 환경에서 다시 시작해야 합니다.
 
 외부 글꼴은 Google Fonts(`fonts.googleapis.com`, `fonts.gstatic.com`)에서 로드하며, 연결할 수 없으면 시스템 글꼴을 사용합니다. API 키, 데이터베이스, 서버 애플리케이션은 필요하지 않습니다.
+
+Windows PowerShell에서는 저장소 폴더에서 `python -m http.server 8000 --bind 127.0.0.1`로 실행한 뒤 `http://127.0.0.1:8000/`을 엽니다. 서버는 확인 후 `Ctrl+C`로 종료합니다.
+
+## 모션 유지보수
+
+영역별 시각 동작은 [사이트 기획](site-plan.md#모션과-연락처)을 참고합니다. 구조와 SVG 경로는 `index.html`, 키프레임과 주기는 `style.css`, 재생 상태는 `script.js`에서 수정합니다.
+
+| 대상 | 주요 선택자·설정 | 수정 시 유의점 |
+| --- | --- | --- |
+| 제목 | `.hero-line`, `.hero-char`, `.hero-glyph`, `.hero-word::after`, `.hero-asterisk` | `script.js`가 `.hero-word`의 텍스트를 글자 단위로 분리. 문구 변경 시 `h1`의 `aria-label`도 함께 변경 |
+| 지도 | `.map-orbit`, `.map-signal`, `.map-node`, `.map-center` | SVG 경로와 중앙 회전 기준점의 좌표를 함께 확인 |
+| AA | `.blueprint-base`, `.blueprint-edge`, `.blueprint-tracer`, `blueprint-*-draw` | `.blueprint-base`는 애니메이션 없는 회색 밑선. 도형 변경 시 밑선과 컬러 경로·연결점 좌표를 함께 변경. `pathLength="1"`로 선 그리기 길이 정규화 |
+| AI | `.orb`, `.ai-network`, `.ai-signal`, `.ai-neuron`, `ai-core-*` | CSS 원·타원과 SVG 신호 궤도의 크기·중심·회전각을 일치시킴. 신호는 `pathLength="100"` 사용 |
+| ASF | `.production i::after`, `.quality::after`, `factory-*` | 막대는 밑색을 유지하고 가상 요소로 컬러 채움. 검사선도 가상 요소이므로 일시정지와 동작 줄이기에 `::after` 포함 |
+
+`script.js`의 `studioVisuals`는 `.blueprint`, `.intelligence-art`, `.factory-art`를 수집합니다. 히어로를 포함한 `motionScenes` 전체에 `MOTION` 버튼과 자동 정지 동작을 적용합니다.
+
+| 상태 클래스 | 역할 |
+| --- | --- |
+| `.is-animated` | JavaScript 준비 후 스튜디오 그래픽의 모션 활성화 |
+| `.motion-paused` | 사용자가 버튼으로 정지한 상태 |
+| `.motion-idle` | `IntersectionObserver`로 화면 밖이거나 `document.hidden`인 상태 |
+
+정지 상태에서는 `animation-play-state: paused`를 적용합니다. 두 정지 클래스 중 하나라도 남아 있으면 재생하지 않습니다. 화면 진입은 해당 영역의 모션을 이어서 재생하며, 매번 처음부터 다시 그리지 않습니다. `IntersectionObserver`를 지원하지 않는 브라우저에서는 탭 가시성과 수동 버튼으로 제어합니다.
+
+새 모션을 추가하거나 시간을 조정할 때는 기본 도형이 사라지지 않는지, PC·모바일에서 겹치지 않는지, 버튼으로 실제 움직임이 멈추고 다시 시작하는지 확인합니다. `prefers-reduced-motion: reduce`와 JavaScript 비활성 상태도 확인합니다. 현재 브라우저 검증 범위와 한계는 [구현·검증 현황](site-plan.md#구현검증-현황)에 기록했습니다.
+
+## 연락처 수정
+
+연락처는 `site-config.js`가 아닌 `index.html` 푸터의 `.footer-contact`에서 관리합니다. 링크 없는 일반 텍스트로 유지하며 표시 주소를 변경합니다.
+
+```html
+<span class="footer-contact">mant@nate.com</span>
+```
+
+서체는 저작권 문구와 동일한 `footer > span` 공통 규칙을 따릅니다. 기본 글자 크기는 8px, 모바일에서는 7px이며 자간은 .7px입니다. `.footer-contact`에는 주소가 줄바꿈되지 않도록 `white-space: nowrap`만 별도로 적용합니다.
 
 ## 공개 링크 설정
 

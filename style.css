@@ -29,10 +29,15 @@
 @media(max-width:1000px) and (min-width:601px){.hero-stage{grid-template-columns:minmax(0,1fr) 230px;gap:24px;padding:46px 0 34px}.hero-stage h1{font-size:7.6vw}.hero-stage .hero-period{transform:translate(7px,15px)}.hero-map-key{font-size:7px}.hero-bottom{grid-template-columns:minmax(0,1fr) 230px;gap:24px}.hero-bottom>p:first-child{font-size:20px}.hero-bottom .hero-description{font-size:10px}.hero-bottom .circle-link{left:auto;right:270px;width:40px;height:40px}}
 @media(max-width:600px){.hero-stage{grid-template-columns:1fr;gap:28px;padding:34px 0 26px}.hero-stage h1{font-size:12vw;letter-spacing:-.065em;line-height:1.12}.hero-stage .hero-period{transform:translate(7px,12px)}.hero-map{display:grid;grid-template-columns:1fr 1.2fr;align-items:center;position:relative;padding:18px 0 0;border-top:1px solid var(--line);min-height:150px}.hero-map-caption{align-self:start;flex-direction:column;gap:8px;font-size:7px;line-height:1.5}.hero-map svg{grid-column:2;grid-row:1/3;width:100%;max-height:160px;margin:0}.hero-map-key{grid-column:1;grid-row:2;flex-direction:column;gap:7px;font-size:9px;align-self:end;padding-bottom:8px}.hero-bottom{grid-template-columns:1fr 44px;gap:19px;padding:24px 0 27px}.hero-bottom>p:first-child{grid-column:1;font-size:20px;padding-left:14px}.hero-bottom .hero-description{grid-column:1/3;font-size:11px;padding-left:16px}.hero-bottom .circle-link{position:static;grid-column:2;grid-row:1;width:42px;height:42px;align-self:center;font-size:22px}.hero-index{font-size:6px;letter-spacing:.4px}}
 
-/* Slow, coordinated motion; layout and readable text remain stable. */
-.hero-line,.hero-word{display:inline-block;animation:hero-arrive 1.1s cubic-bezier(.2,.65,.25,1) both}
-.hero-word{animation-delay:.18s;position:relative}
-.hero-word::after{content:'';position:absolute;left:3%;right:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent,var(--orange),transparent);transform:scaleX(0);transform-origin:left;opacity:0;animation:word-accent 8s ease-in-out 1.2s infinite}
+/* Editorial type: a staggered entrance, then a travelling wave of orange. */
+.hero-line-clip{display:inline-block;overflow:hidden;vertical-align:bottom;padding:0 .08em .08em;margin:0 -.08em -.08em}
+.hero-line{display:inline-block;animation:hero-arrive 1.1s cubic-bezier(.16,1,.3,1) both}
+.hero-word{display:inline-flex;position:relative;isolation:isolate}
+.hero-char{display:inline-block;animation:letter-arrive .95s cubic-bezier(.16,1,.3,1) both;animation-delay:calc(.18s + var(--char-index)*.045s)}
+.hero-glyph{display:inline-block;animation:letter-wave 6.8s cubic-bezier(.45,0,.25,1) infinite;animation-delay:calc(1.5s + var(--char-index)*.085s)}
+.hero-word::after{content:'';position:absolute;left:2%;right:-1%;bottom:-.12em;height:.13em;border-top:2px solid var(--orange);border-radius:50%;transform:rotate(-2deg);transform-origin:left;opacity:.8;animation:word-accent 1.1s cubic-bezier(.16,1,.3,1) 1s both;pointer-events:none}
+.hero-stage .hero-period{font-size:.5em;transform:translate(14px,12px)}
+.hero-asterisk{display:inline-block;line-height:1;animation:asterisk-turn 6.8s cubic-bezier(.65,0,.2,1) 1.5s infinite}
 .hero-map svg{animation:map-arrive 1.6s ease-out both}
 .map-orbit{stroke-dasharray:572;stroke-dashoffset:0;animation:orbit-draw 2s cubic-bezier(.25,.6,.3,1) both}
 .map-orbit.map-phase-2{animation-delay:.2s}.map-orbit.map-phase-3{animation-delay:.4s}
@@ -46,13 +51,80 @@
 .motion-toggle{appearance:none;border:0;padding:0;background:none;color:var(--muted);font:inherit;letter-spacing:1px;display:inline-flex;align-items:center;gap:6px;cursor:pointer}
 .motion-toggle span{color:var(--olive)}.motion-toggle i{font-style:normal;color:var(--orange);font-size:10px;letter-spacing:-2px;margin-left:3px}
 .motion-toggle:hover{color:var(--ink)}.motion-toggle:focus-visible{outline:2px solid var(--orange);outline-offset:5px}
-.hero.motion-paused *,.hero.motion-paused *::after{animation-play-state:paused!important}
-@keyframes hero-arrive{from{opacity:0;transform:translateY(18px);filter:blur(3px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+.hero.motion-paused *,.hero.motion-paused *::after,.hero.motion-idle *,.hero.motion-idle *::after{animation-play-state:paused!important}
+@keyframes hero-arrive{from{opacity:0;transform:translateY(105%) rotate(2deg)}to{opacity:1;transform:translateY(0) rotate(0)}}
+@keyframes letter-arrive{from{opacity:0;transform:translateY(.55em) rotate(7deg)}to{opacity:1;transform:translateY(0) rotate(0)}}
+@keyframes letter-wave{0%,32%,100%{color:var(--ink);transform:translateY(0) rotate(0)}10%{color:var(--orange);transform:translateY(-.055em) rotate(-2deg)}21%{color:var(--ink);transform:translateY(.012em) rotate(.5deg)}}
+@keyframes asterisk-turn{0%,8%{transform:rotate(0)}32%,100%{transform:rotate(180deg)}}
 @keyframes map-arrive{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @keyframes orbit-draw{from{stroke-dashoffset:572;opacity:0}to{stroke-dashoffset:0;opacity:1}}
-@keyframes word-accent{0%,65%,100%{transform:scaleX(0);opacity:0}12%,40%{transform:scaleX(1);opacity:.6}55%{transform:scaleX(1);opacity:0}}
+@keyframes word-accent{from{transform:rotate(-2deg) scaleX(0);opacity:0}to{transform:rotate(-2deg) scaleX(1);opacity:.8}}
 @keyframes signal-travel{from{stroke-dashoffset:0}to{stroke-dashoffset:-100}}
 @keyframes node-awake{0%,28%,100%{fill:var(--olive);transform:scale(1)}8%,18%{fill:var(--orange);transform:scale(1.5)}}
 @keyframes label-awake{0%,28%,100%{fill:var(--ink)}8%,18%{fill:var(--orange)}}
 @keyframes center-turn{0%,35%{transform:rotate(0)}50%,85%{transform:rotate(60deg)}100%{transform:rotate(120deg)}}
 @media(prefers-reduced-motion:reduce){.hero *,.hero *::after{animation:none!important}.hero-word::after{display:none}.motion-toggle{display:none}}
+
+/* Keep the complete neutral drawing visible beneath the animated colour. */
+.blueprint-base{color:#aeb1a8}
+.blueprint-guides{stroke:#aeb1a8}
+.blueprint-tracer{opacity:0}
+.blueprint.is-animated .blueprint-edge{stroke-dasharray:1;animation:blueprint-top-draw 9s cubic-bezier(.4,0,.2,1) infinite}
+.blueprint.is-animated .blueprint-left{animation-name:blueprint-left-draw}
+.blueprint.is-animated .blueprint-right{animation-name:blueprint-right-draw}
+.blueprint.is-animated .blueprint-grid{animation-name:blueprint-grid-draw}
+.blueprint.is-animated .blueprint-hidden,.blueprint.is-animated .blueprint-nodes{animation:blueprint-resolve 9s ease-in-out infinite}
+.blueprint.is-animated .blueprint-tracer{stroke-dasharray:.07 .93;animation:blueprint-trace 9s linear infinite}
+.blueprint.motion-paused *,.blueprint.motion-idle *{animation-play-state:paused!important}
+@keyframes blueprint-top-draw{0%,5%{stroke-dashoffset:1;opacity:0}7%{opacity:1}28%,84%{stroke-dashoffset:0;opacity:1}96%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes blueprint-left-draw{0%,20%{stroke-dashoffset:1;opacity:0}22%{opacity:1}41%,84%{stroke-dashoffset:0;opacity:1}96%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes blueprint-right-draw{0%,31%{stroke-dashoffset:1;opacity:0}33%{opacity:1}50%,84%{stroke-dashoffset:0;opacity:1}96%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes blueprint-grid-draw{0%,43%{stroke-dashoffset:1;opacity:0}45%{opacity:1}64%,84%{stroke-dashoffset:0;opacity:1}96%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes blueprint-resolve{0%,52%{opacity:0}66%,84%{opacity:1}96%,100%{opacity:0}}
+@keyframes blueprint-trace{0%,5%{stroke-dashoffset:.07;opacity:0}7%{opacity:1}28%{stroke-dashoffset:-.93;opacity:1}32%,100%{stroke-dashoffset:-.93;opacity:0}}
+@media(prefers-reduced-motion:reduce){.blueprint.is-animated *{animation:none!important}.blueprint.is-animated .blueprint-edge{stroke-dasharray:none;stroke-dashoffset:0}.blueprint-tracer{display:none}}
+
+/* AI: retain the quiet orbital structure while signals circulate through it. */
+.intelligence-art .orb{border-color:#b9b2a6}
+.ai-network{position:absolute;left:50%;top:50%;width:360px;height:280px;transform:translate(-50%,-50%);pointer-events:none;color:#b9b2a6}
+.ai-signals{opacity:0}
+.ai-neuron{transform-box:fill-box;transform-origin:center}
+.intelligence-art.is-animated .ai-signals{opacity:.8}
+.intelligence-art.is-animated .ai-signal{stroke-dasharray:7 93;animation:ai-signal-flow 7s linear infinite}
+.intelligence-art.is-animated .ai-signal-two{animation-delay:-2.33s;animation-direction:reverse}
+.intelligence-art.is-animated .ai-signal-three{animation-delay:-4.66s}
+.intelligence-art.is-animated .ai-neuron{animation:ai-neuron-response 7s ease-in-out infinite}
+.intelligence-art.is-animated .ai-neuron-two{animation-delay:-1.75s}
+.intelligence-art.is-animated .ai-neuron-three{animation-delay:-3.5s}
+.intelligence-art.is-animated .ai-neuron-four{animation-delay:-5.25s}
+.intelligence-art.is-animated b{animation:ai-core-response 7s ease-in-out infinite}
+.intelligence-art.is-animated b span{animation:ai-core-turn 7s cubic-bezier(.65,0,.2,1) infinite}
+.intelligence-art.motion-paused *,.intelligence-art.motion-idle *{animation-play-state:paused!important}
+@keyframes ai-signal-flow{from{stroke-dashoffset:0}to{stroke-dashoffset:-100}}
+@keyframes ai-neuron-response{0%,35%,100%{fill:#b9b2a6;transform:scale(1)}12%,22%{fill:var(--orange);transform:scale(1.4)}}
+@keyframes ai-core-response{0%,28%,80%,100%{color:#a45c3e;transform:scale(1)}48%,58%{color:var(--orange);transform:scale(1.025)}}
+@keyframes ai-core-turn{0%,28%{transform:rotate(0)}58%,100%{transform:rotate(90deg)}}
+@media(prefers-reduced-motion:reduce){.intelligence-art.is-animated *{animation:none!important}.intelligence-art.is-animated .ai-signals{opacity:0}}
+
+/* Factory: collect process data, scan quality, then pass the result forward. */
+.factory-art .production i{position:relative}
+.factory-art .quality{position:relative}
+.factory-art.is-animated .production i::after{content:'';position:absolute;inset:0;background:var(--olive);transform-origin:bottom;animation:factory-production 7s ease-in-out infinite}
+.factory-art .production i:nth-child(2){--bar-delay:.2s}
+.factory-art .production i:nth-child(3){--bar-delay:.4s}
+.factory-art .production i:nth-child(4){--bar-delay:.6s}
+.factory-art .production i:nth-child(5){--bar-delay:.8s}
+.factory-art.is-animated .production i::after{animation-delay:var(--bar-delay,0s)}
+.factory-art.is-animated .quality::after{content:'';position:absolute;left:0;right:0;top:20%;height:1px;background:linear-gradient(90deg,transparent,var(--orange),transparent);opacity:0;pointer-events:none;animation:factory-quality-scan 7s ease-in-out infinite}
+.factory-art.is-animated .quality strong{animation:factory-quality-response 7s ease-in-out infinite}
+.factory-art.is-animated .quality strong span{display:block;animation:factory-result 7s ease-in-out infinite}
+.factory-art.is-animated .quality>div span{display:inline-block;animation:factory-data-flow 7s ease-in-out infinite}
+.factory-art.motion-paused *,.factory-art.motion-paused *::after,.factory-art.motion-idle *,.factory-art.motion-idle *::after{animation-play-state:paused!important}
+@keyframes factory-production{0%,62%,100%{transform:scaleY(.3);background:var(--olive)}12%{transform:scaleY(.85);background:var(--olive)}24%,32%{transform:scaleY(1);background:var(--orange)}44%{transform:scaleY(.65);background:var(--olive)}}
+@keyframes factory-quality-scan{0%,18%{top:20%;opacity:0}24%{opacity:.65}50%{top:76%;opacity:.65}58%,100%{top:76%;opacity:0}}
+@keyframes factory-quality-response{0%,42%,88%,100%{color:var(--olive)}58%,72%{color:var(--orange)}}
+@keyframes factory-result{0%,48%,88%,100%{color:var(--olive);transform:translate(0,0)}62%,72%{color:var(--orange);transform:translate(3px,-3px)}}
+@keyframes factory-data-flow{0%,52%,92%,100%{color:var(--olive);transform:translateX(0)}66%{color:var(--orange);transform:translateX(5px)}78%{color:var(--olive);transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){.factory-art.is-animated *,.factory-art.is-animated *::after{animation:none!important}.factory-art.is-animated .production i::after,.factory-art.is-animated .quality::after{display:none}}
+
+.footer-contact{white-space:nowrap}

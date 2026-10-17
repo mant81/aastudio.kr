@@ -1,13 +1,50 @@
 (() => {
+  const hero = document.querySelector('.hero');
+  const studioVisuals = Array.from(document.querySelectorAll('.blueprint, .intelligence-art, .factory-art'));
+  const motionScenes = [hero, ...studioVisuals].filter(Boolean);
+  const heroWord = document.querySelector('.hero-word');
+  if (heroWord) {
+    const letters = Array.from(heroWord.textContent, (letter, index) => {
+      const character = document.createElement('span');
+      character.className = 'hero-char';
+      character.style.setProperty('--char-index', index);
+      const glyph = document.createElement('span');
+      glyph.className = 'hero-glyph';
+      glyph.textContent = letter;
+      character.append(glyph);
+      return character;
+    });
+    heroWord.replaceChildren(...letters);
+  }
   const motionButton = document.querySelector('.motion-toggle');
-  if (motionButton) {
+  if (motionButton && hero) {
     motionButton.addEventListener('click', () => {
-      const paused = document.querySelector('.hero').classList.toggle('motion-paused');
+      const paused = !hero.classList.contains('motion-paused');
+      motionScenes.forEach(scene => scene.classList.toggle('motion-paused', paused));
       motionButton.setAttribute('aria-pressed', String(paused));
-      motionButton.setAttribute('aria-label', paused ? '배경 모션 재생' : '배경 모션 일시정지');
+      motionButton.setAttribute('aria-label', paused ? '모션 재생' : '모션 일시정지');
       motionButton.querySelector('span').textContent = paused ? 'OFF' : 'ON';
       motionButton.querySelector('i').textContent = paused ? '▷' : 'Ⅱ';
     });
+  }
+  if (motionScenes.length) {
+    const visibleScenes = new Set(motionScenes);
+    const syncMotion = () => motionScenes.forEach(scene => {
+      scene.classList.toggle('motion-idle', document.hidden || !visibleScenes.has(scene));
+    });
+    document.addEventListener('visibilitychange', syncMotion);
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) visibleScenes.add(entry.target);
+          else visibleScenes.delete(entry.target);
+        });
+        syncMotion();
+      });
+      motionScenes.forEach(scene => observer.observe(scene));
+    }
+    studioVisuals.forEach(scene => scene.classList.add('is-animated'));
+    syncMotion();
   }
   const config = window.AASTUDIO_CONFIG || {};
   const safeUrl = value => {
