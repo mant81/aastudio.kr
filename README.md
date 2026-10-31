@@ -27,13 +27,13 @@ python3 -m http.server 8000 --bind 0.0.0.0
 기존 `aastudio.kr` 사이트는 네트워크 접근 제한으로 내용을 가져오지 못했습니다. 현재 페이지는 대화에서 정한 브랜드 구성에 따라 새로 작성한 초안입니다.
 
 
-## ASnapdo 1.0.1 — 2026-10-31
+## ASnapdo 1.0.2 — 2026-10-31
 
 - 제품 설명: `asnapdo/index.html` (`/asnapdo/`)
 - 변경이력: `asnapdo/changelog/index.html` (`/asnapdo/changelog/`)
-- 설치 파일: [ASnapdo 1.0.1 다운로드](https://github.com/mant81/ASnapdo/releases/download/v1.0.1/asnapdo_inst_x64_1.0.1.exe)
+- 설치 파일: [ASnapdo 1.0.2 다운로드](https://github.com/mant81/ASnapdo/releases/download/v1.0.2/asnapdo_inst_x64_1.0.2.exe)
 - 릴리즈: [GitHub Releases](https://github.com/mant81/ASnapdo/releases/)
-- 릴리즈 메타데이터와 SHA-256: `release/asnapdo-1.0.1.json`
+- 릴리즈 메타데이터와 SHA-256: `release/asnapdo-1.0.2.json`
 - 개인·기업·관공서 무료, 제작사 AAStudio.kr
 
-홈에 ASnapdo 제품 영역을 추가하고 Pages 배포 대상에 `asnapdo/`와 `release/`를 포함했습니다. 기본 설치 폴더는 `C:\Program Files\ASnapdo`입니다. 세부 구성과 검증 범위는 [제품 페이지 운영 문서](docs/asnapdo-product.md)를 참고하세요. 1.0.1에서는 다운로드 링크·파일 정보와 변경이력을 갱신하고 로그인 자동 실행 기본 체크 및 세션 암호화 안내를 반영했습니다.
+홈에 ASnapdo 제품 영역을 추가하고 Pages 배포 대상에 `asnapdo/`와 `release/`를 포함했습니다. 기본 설치 폴더는 `C:\Program Files\ASnapdo`입니다. 세부 구성과 검증 범위는 [제품 페이지 운영 문서](docs/asnapdo-product.md)를 참고하세요. 1.0.2에서는 문맥별 도구 속성, 영역 자동 복사와 최대 12개 클립보드 목록, 번호 크기 수정, 갤러리 닫기 및 창 제목 버전을 반영했습니다.
