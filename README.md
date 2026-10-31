@@ -18,10 +18,22 @@ python3 -m http.server 8000 --bind 0.0.0.0
 
 ## 현재 상태
 
-페이지와 반응형 스타일, GitHub Pages 배포 워크플로, `aastudio.kr`용 `CNAME` 파일을 작성했습니다. GitHub 업로드·배포와 실제 DNS 변경은 아직 수행하지 않았습니다. 무료 도구 및 다운로드 주소는 미정이므로 준비 중으로 표시됩니다.
+페이지와 반응형 스타일, GitHub Pages 배포 워크플로, `aastudio.kr`용 `CNAME` 파일을 작성했습니다. GitHub Pages 워크플로로 배포하며 도메인 설정은 기존 구성을 유지합니다. 웹 도구와 AA Studio Free는 준비 중이며, ASnapdo는 제품 설명·변경이력 및 설치 파일을 추가했습니다.
 
 2026-10-17 기준, 메인 타이포그래피와 세 스튜디오의 그래픽에 애니메이션을 적용했습니다. `MOTION` 버튼으로 전체 모션을 일시정지·재생하며, 화면 밖이나 비활성 탭에서는 자동으로 멈춥니다. 기기의 동작 줄이기 설정도 반영합니다. 푸터 연락처는 링크 없는 일반 텍스트 `mant@nate.com`이며 저작권 문구와 같은 서체로 표시합니다.
 
 영역별 동작과 검증 범위는 [사이트 기획](docs/site-plan.md#모션과-연락처), 수정 방법은 [개발 가이드](docs/operations.md#모션-유지보수)에 정리했습니다.
 
 기존 `aastudio.kr` 사이트는 네트워크 접근 제한으로 내용을 가져오지 못했습니다. 현재 페이지는 대화에서 정한 브랜드 구성에 따라 새로 작성한 초안입니다.
+
+
+## ASnapdo 1.0.1 — 2026-10-31
+
+- 제품 설명: `asnapdo/index.html` (`/asnapdo/`)
+- 변경이력: `asnapdo/changelog/index.html` (`/asnapdo/changelog/`)
+- 설치 파일: [ASnapdo 1.0.1 다운로드](https://github.com/mant81/ASnapdo/releases/download/v1.0.1/asnapdo_inst_x64_1.0.1.exe)
+- 릴리즈: [GitHub Releases](https://github.com/mant81/ASnapdo/releases/)
+- 릴리즈 메타데이터와 SHA-256: `release/asnapdo-1.0.1.json`
+- 개인·기업·관공서 무료, 제작사 AAStudio.kr
+
+홈에 ASnapdo 제품 영역을 추가하고 Pages 배포 대상에 `asnapdo/`와 `release/`를 포함했습니다. 기본 설치 폴더는 `C:\Program Files\ASnapdo`입니다. 세부 구성과 검증 범위는 [제품 페이지 운영 문서](docs/asnapdo-product.md)를 참고하세요. 1.0.1에서는 다운로드 링크·파일 정보와 변경이력을 갱신하고 로그인 자동 실행 기본 체크 및 세션 암호화 안내를 반영했습니다.

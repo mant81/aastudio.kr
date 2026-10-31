@@ -1,0 +1,14 @@
+{
+  "product": "ASnapdo",
+  "version": "1.0.1",
+  "date": "2026-10-31",
+  "publisher": "AAStudio.kr",
+  "license": "개인·기업·관공서 모두 무료",
+  "platform": "Windows 10/11 x64",
+  "filename": "asnapdo_inst_x64_1.0.1.exe",
+  "url": "https://github.com/mant81/ASnapdo/releases/download/v1.0.1/asnapdo_inst_x64_1.0.1.exe",
+  "releasesUrl": "https://github.com/mant81/ASnapdo/releases/",
+  "sizeBytes": 36585246,
+  "sha256": "7522ca6af28ae425da6f01a3f081e3dac20d7de129b859f87691bb4fd2e402a7",
+  "installDirectory": "C:\\Program Files\\ASnapdo"
+}
