@@ -22,7 +22,7 @@ jobs:
       - name: Prepare public files
         run: |
           mkdir _site
-          cp index.html style.css script.js site-config.js favicon.svg CNAME .nojekyll _site/
+          cp index.html style.css script.js font-preference.js site-config.js favicon.svg CNAME .nojekyll _site/
           cp -R products freeware asnapdo release assets _site/
       - uses: actions/upload-pages-artifact@v3
         with:

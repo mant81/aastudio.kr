@@ -58,3 +58,5 @@ Korean and Latin typography use the locally hosted minbo font 0.1.3 WOFF2, inclu
 Readability: body and controls use Minbo Small optical outlines; large headings retain Minbo Regular. Muted text uses #3b4235 and captions/footer text have larger minimum sizes.
 
 Small-text revision: minimum fixed text size 14px; body copy 16px with 1.95 line-height. Small labels use reduced tracking and flexible rows wrap on mobile.
+
+Font selector: every page offers Minbo (default) and original font stacks. font-preference.js restores the localStorage preference before rendering, persists changes and synchronizes tabs. Readability sizes and contrast remain in both modes.
