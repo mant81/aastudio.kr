@@ -1,15 +1,4 @@
 (() => {
-  function revealLinkedDetails() {
-    let id;
-    try { id = decodeURIComponent(location.hash.slice(1)); }
-    catch { return; }
-    const target = document.getElementById(id);
-    const details = target && target.querySelector('.feature-details');
-    if (details) details.open = true;
-  }
-  window.addEventListener('hashchange', revealLinkedDetails);
-  revealLinkedDetails();
-
   const preview = document.querySelector('.image-preview');
   if (!preview || typeof preview.showModal !== 'function') return;
 

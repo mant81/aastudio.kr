@@ -14,10 +14,7 @@
 .case-action{display:flex;gap:20px;font-size:12px;white-space:nowrap}
 .use-case-list>a:hover h3,.use-case-list>a:hover .case-action{color:var(--product-accent)}
 .feature-details{margin-top:26px;border-top:1px solid var(--snap-line);border-bottom:1px solid var(--snap-line)}
-.feature-details summary,.product-faq summary{cursor:pointer;min-height:48px;padding:18px 26px 18px 0;font-size:15px;line-height:1.7;font-weight:500}
-.feature-details summary::marker,.product-faq summary::marker{color:var(--product-accent)}
-.feature-details summary:focus-visible,.product-faq summary:focus-visible{outline:2px solid var(--product-accent);outline-offset:4px}
-.feature-details[open]{padding-bottom:20px}
+.feature-detail-title{margin:0;padding:4px 0 14px;font-size:15px;line-height:1.7;font-weight:500}
 .feature-details .feature-text-grid{margin-top:12px}
 .feature-details .key-table{margin-top:0}
 .product-faq>details{border-top:1px solid var(--snap-line)}
@@ -46,7 +43,7 @@
   .use-case-list h3{font-size:16px}
   .use-case-list p{font-size:13px}
   .case-action{grid-column:2;justify-content:space-between;min-height:32px;align-items:center}
-  .feature-details summary,.product-faq summary{font-size:14px;padding-right:0}
+  .feature-detail-title,.product-faq summary{font-size:14px;padding-right:0}
   .product-faq details p{padding-right:0;font-size:13px}
   .image-preview{padding:14px}
 }
