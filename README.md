@@ -54,3 +54,5 @@ Freeware에 민보체 소개와 TTF·WOFF2·Android 미리보기 APK 다운로�
 
 
 Korean and Latin typography use the locally hosted minbo font 0.1.3 WOFF2, including ASCII digits and punctuation. Font files and license: assets/fonts/minbo/.
+
+Readability: body and controls use Minbo Small optical outlines; large headings retain Minbo Regular. Muted text uses #3b4235 and captions/footer text have larger minimum sizes.
