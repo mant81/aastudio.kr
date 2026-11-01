@@ -37,3 +37,13 @@ python3 -m http.server 8000 --bind 0.0.0.0
 - 개인·기업·관공서 무료, 제작사 AAStudio.kr
 
 홈에 ASnapdo 제품 영역을 추가하고 Pages 배포 대상에 `asnapdo/`와 `release/`를 포함했습니다. 기본 설치 폴더는 `C:\Program Files\ASnapdo`입니다. 세부 구성과 검증 범위는 [제품 페이지 운영 문서](docs/asnapdo-product.md)를 참고하세요. 1.0.2에서는 문맥별 도구 속성, 영역 자동 복사와 최대 12개 클립보드 목록, 번호 크기 수정, 갤러리 닫기 및 창 제목 버전을 반영했습니다.
+
+## 페이지 탐색
+
+- `/`: 세 스튜디오 소개와 목록 페이지 진입점.
+- `/products/`: AA Studio 및 설계 웹 도구.
+- `/freeware/`: ASnapdo 소개와 무료 다운로드.
+- `/asnapdo/`: ASnapdo 기능 및 설치 안내.
+- `/asnapdo/changelog/`: 변경이력.
+
+모든 페이지에 Studios·Products·Freeware 공통 메뉴를 제공합니다. 새 목록 페이지도 GitHub Pages 배포 대상에 포함됩니다.

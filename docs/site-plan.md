@@ -25,6 +25,7 @@ AASTUDIO.KR을 세 스튜디오의 상위 브랜드 사이트로 구성합니다
 - 큰 영문 타이포그래피와 짧은 한국어 설명.
 - AA Studio는 구조 도면, AI Studio는 연결과 가능성, ASF Studio는 공정·품질을 표현한 그래픽.
 - 세 브랜드를 독립된 가로 섹션으로 배치하고, 모바일에서는 세로로 재구성.
+- 외부 제품 사이트는 사용성 원칙의 참고 대상으로만 활용합니다. 문구·이미지·코드나 고유한 화면 구성을 복제하지 않고, 현재 브랜드 체계와 자체 작업 사례로 설계합니다.
 - 외부 이미지 없이 CSS와 SVG로 그래픽 구현.
 
 현재 영문 헤드라인과 한국어 제품 설명은 사이트용으로 새로 작성한 제안 문구입니다. 사용자가 제공한 기존 공식 카피로 간주하지 않습니다. 로고타입의 ® 표시는 시각 초안이며 상표 등록 여부는 확인하지 않았으므로 공개 전 유지 여부를 확인해야 합니다.
@@ -33,14 +34,16 @@ AASTUDIO.KR을 세 스튜디오의 상위 브랜드 사이트로 구성합니다
 
 | 영역 | 내용 |
 | --- | --- |
-| 헤더 | AASTUDIO 로고타입, Studios·Free tools·AA Studio Free 이동 |
+| 공통 헤더 | AASTUDIO 로고타입, Studios·Products·Freeware 이동 및 현재 위치 표시 |
 | 메인 | “A practice of possibilities.”와 브랜드 소개 |
 | Studios | AA Studio, AI Studio, ASF Studio 소개 |
-| Free tools | Diagram·Database Modeling 연결 영역 |
-| 다운로드 | AA Studio Free, GitHub Releases 연결 영역 |
+| 홈 하단 | Products·Freeware 목록으로 이동하는 짧은 안내 |
+| `/products/` | AA Studio 개발·다운로드 상태, Diagram·Database Modeling 웹 도구 |
+| `/freeware/` | ASnapdo 소개와 Windows 무료 다운로드 |
+| `/asnapdo/` | ASnapdo 기능·설치 안내, 변경이력 탭 |
 | 푸터 | 브랜드 문구, 연락처 `mant@nate.com`, 저작권 연도, 상단 이동 |
 
-무료 다이어그램·DB 모델링 페이지는 현재 AA Studio 영역으로 묶은 구현 초안입니다. 별도 서비스인지 AA Studio의 웹 도구인지는 아직 사용자에게 확정받지 않았습니다.
+홈은 스튜디오 소개에 집중하고, 제품과 무료 소프트웨어의 목록은 독립 페이지로 제공합니다. Products에는 AA Studio와 설계용 웹 도구, Freeware에는 ASnapdo를 배치합니다. ASnapdo 상세 화면은 공통 사이트 메뉴와 제품 탭으로 구성하고 별도 경로 메뉴는 중복 노출하지 않습니다.
 
 ## 모션과 연락처
 

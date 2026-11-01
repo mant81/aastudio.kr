@@ -53,7 +53,7 @@
   };
   function activate(element, value, label) {
     const url = safeUrl(value);
-    if (!url) return false;
+    if (!element || !url) return false;
     element.href = url;
     element.classList.remove('unavailable');
     element.removeAttribute('aria-disabled');
@@ -66,8 +66,14 @@
   activate(document.querySelector('[data-tool="diagram"]'), config.diagramUrl, '도구 열기');
   activate(document.querySelector('[data-tool="database"]'), config.databaseUrl, '도구 열기');
   if (activate(document.getElementById('release-link'), config.releasesUrl, 'AA Studio Free 다운로드')) {
+    const releaseLink = document.getElementById('release-link');
+    releaseLink.classList.remove('catalog-pending');
+    releaseLink.classList.add('snap-button');
+    const releaseStatus = document.getElementById('release-status');
+    if (releaseStatus) releaseStatus.textContent = '다운로드 가능';
     document.getElementById('release-note').textContent = 'GitHub Releases에서 최신 버전과 설치 파일을 확인하세요.';
     document.querySelector('.download-copy p').innerHTML = '생각을 정리하고, 구조를 설계하는 공간.<br>AA Studio Free와 함께 시작하세요.';
   }
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
 })();

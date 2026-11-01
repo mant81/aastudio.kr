@@ -23,7 +23,7 @@ jobs:
         run: |
           mkdir _site
           cp index.html style.css script.js site-config.js favicon.svg CNAME .nojekyll _site/
-          cp -R asnapdo release _site/
+          cp -R products freeware asnapdo release _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
