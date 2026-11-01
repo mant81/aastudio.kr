@@ -18,12 +18,10 @@
 .faq-heading>p{margin:0 0 5px;font-size:14px;line-height:1.9;color:var(--snap-muted);word-break:keep-all}
 .faq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}
 .faq-group>h3{margin:0 0 14px;font-size:15px;font-weight:500;line-height:1.7}
-.faq-group>details{border-top:1px solid var(--snap-line)}
-.faq-group>details:last-child{border-bottom:1px solid var(--snap-line)}
-.product-faq summary{display:flex;align-items:center;min-height:64px;padding:14px 22px 14px 0;cursor:pointer;font-size:14px;line-height:1.7;font-weight:500;word-break:keep-all}
-.product-faq summary::marker{color:var(--product-accent)}
-.product-faq summary:focus-visible{outline:2px solid var(--product-accent);outline-offset:4px}
-.product-faq details p{max-width:620px;margin:0 0 20px;padding-right:18px;font-size:13px;line-height:1.9;color:var(--snap-muted);word-break:keep-all}
+.faq-item{border-top:1px solid var(--snap-line)}
+.faq-item:last-child{border-bottom:1px solid var(--snap-line)}
+.faq-item h4{margin:0;padding:16px 0 6px;font-size:14px;line-height:1.7;font-weight:500;word-break:keep-all}
+.faq-item p{max-width:620px;margin:0;padding:0 18px 18px 0;font-size:13px;line-height:1.9;color:var(--snap-muted);word-break:keep-all}
 .product-faq a{text-decoration:underline;text-underline-offset:4px}
 .download-panel{scroll-margin-top:90px}
 .shot-preview{display:block}
@@ -52,8 +50,8 @@
   .faq-heading>p{font-size:13px}
   .faq-grid{grid-template-columns:1fr;gap:30px}
   .faq-group>h3{margin-bottom:10px}
-  .product-faq summary{font-size:14px;padding-right:0}
-  .product-faq details p{padding-right:0;font-size:13px}
+  .faq-item h4{font-size:14px}
+  .faq-item p{padding-right:0;font-size:13px}
   .image-preview{padding:14px}
 }
 @media(max-width:600px){.product-container{padding:0 6%}.product-tabs{gap:12px}.product-subnav{gap:10px}.key-table kbd{white-space:normal;overflow-wrap:anywhere}.product-actions .snap-button{width:100%}.product-page>footer.product-container{padding:0 6%}}
