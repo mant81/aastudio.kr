@@ -53,4 +53,4 @@ python3 -m http.server 8000 --bind 0.0.0.0
 Freeware에 민보체 소개와 TTF·WOFF2·Android 미리보기 APK 다운로드, 0.1.3 릴리스 노트를 추가했습니다. 개인·기업·관공서의 비상업적 사용은 무료이며 상업적 이용은 금지합니다. [라이선스 전문](https://mant81.github.io/font-library/license.html)을 연결하고, 자모 조합 시험판 및 미리보기 APK의 범위를 표시했습니다.
 
 
-Hangul typography uses the locally hosted minbo font 0.1.3 WOFF2. A Hangul-only unicode-range preserves existing Latin typography. Font files and license: assets/fonts/minbo/.
+Korean and Latin typography use the locally hosted minbo font 0.1.3 WOFF2, including ASCII digits and punctuation. Font files and license: assets/fonts/minbo/.
