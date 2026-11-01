@@ -192,3 +192,12 @@
   .product-actions{flex-direction:column;align-items:stretch}
   .home-directory{grid-template-columns:1fr;gap:26px;margin:24px 6% 40px}
 }
+
+/* Minbo freeware entry */
+.minbo-card{margin-top:64px;padding-top:56px;border-top:1px solid var(--line);scroll-margin-top:24px}
+.minbo-card>div,.minbo-release-notes{min-width:0}
+.minbo-release-notes{padding:28px;border:1px solid var(--line);background:rgba(255,255,255,.25);scroll-margin-top:24px}
+.minbo-release-notes h3{font-size:28px;letter-spacing:-1px;margin:18px 0 10px}
+.minbo-release-notes ul{padding-left:20px;font-size:14px;line-height:1.9;color:#62675a;word-break:keep-all}
+.minbo-release-notes li+li{margin-top:10px}
+@media(max-width:600px){.minbo-card{margin-top:40px;padding-top:36px}.minbo-release-notes{padding:20px}}

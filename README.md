@@ -42,8 +42,12 @@ python3 -m http.server 8000 --bind 0.0.0.0
 
 - `/`: 세 스튜디오 소개와 목록 페이지 진입점.
 - `/products/`: AA Studio 및 설계 웹 도구.
-- `/freeware/`: ASnapdo 소개와 무료 다운로드.
+- `/freeware/`: ASnapdo와 민보체 소개, 다운로드 및 민보체 릴리스 노트.
 - `/asnapdo/`: ASnapdo 기능 및 설치 안내.
 - `/asnapdo/changelog/`: 변경이력.
 
 모든 페이지에 Studios·Products·Freeware 공통 메뉴를 제공합니다. 새 목록 페이지도 GitHub Pages 배포 대상에 포함됩니다.
+
+## 민보체 / minbo font 0.1.3 — 2026-11-01
+
+Freeware에 민보체 소개와 TTF·WOFF2·Android 미리보기 APK 다운로드, 0.1.3 릴리스 노트를 추가했습니다. 개인·기업·관공서의 비상업적 사용은 무료이며 상업적 이용은 금지합니다. [라이선스 전문](https://mant81.github.io/font-library/license.html)을 연결하고, 자모 조합 시험판 및 미리보기 APK의 범위를 표시했습니다.
