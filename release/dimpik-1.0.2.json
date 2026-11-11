@@ -1,0 +1,15 @@
+{
+  "product": "DIMPIK",
+  "version": "1.0.2",
+  "date": "2026-10-31",
+  "publisher": "AAStudio.kr",
+  "license": "개인·기업·관공서 모두 무료",
+  "platform": "Windows 10/11 x64",
+  "filename": "dimpik_inst_x64_1.0.2.exe",
+  "url": "https://aastudio.kr/release/dimpik_inst_x64_1.0.2.exe",
+  "releasesUrl": "https://github.com/mant81/DIMPIK/releases/",
+  "sizeBytes": 36575536,
+  "sha256": "5881ea9dfbb06adf1279fb49cbd143bb0b35f2cefc273eb346acd711ffe3a080",
+  "installDirectory": null,
+  "installDirectoryNote": "이전 버전 원본 설치 프로그램의 경로를 따릅니다."
+}

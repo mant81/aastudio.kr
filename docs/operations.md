@@ -6,7 +6,7 @@
 | --- | --- |
 | `index.html` | 스튜디오 소개·문구·SVG 그래픽 |
 | `products/index.html` | AA Studio 및 설계 웹 도구 목록 |
-| `freeware/index.html` | ASnapdo 무료 소프트웨어 목록 |
+| `freeware/index.html` | DIMPIK 무료 소프트웨어 목록 |
 | `style.css` | 색상·레이아웃·반응형 스타일·CSS 애니메이션 |
 | `site-config.js` | 공개 도구·다운로드 URL |
 | `script.js` | 제목 글자 분리·모션 제어·링크 활성화·연도 표시 |
@@ -144,7 +144,7 @@ window.AASTUDIO_CONFIG = {
 
 ## 2026-11-01 정보 구조 개선 검증
 
-홈·Products·Freeware·ASnapdo 설명·변경이력의 공통 메뉴와 반응형 배치를 Chromium에서 확인했습니다. 1440·900·390·320px에서 가로 넘침과 JavaScript 오류가 없으며, 내부 링크 17개와 이미지 로딩이 정상입니다. 외부 Google Fonts 요청을 차단한 시스템 대체 글꼴 환경에서 검증했습니다.
+홈·Products·Freeware·DIMPIK 설명·변경이력의 공통 메뉴와 반응형 배치를 Chromium에서 확인했습니다. 1440·900·390·320px에서 가로 넘침과 JavaScript 오류가 없으며, 내부 링크 17개와 이미지 로딩이 정상입니다. 외부 Google Fonts 요청을 차단한 시스템 대체 글꼴 환경에서 검증했습니다.
 
 Products의 설정은 빈 값, 유효한 HTTPS 주소, 잘못된 주소의 세 상태를 검증했습니다. 다운로드 링크가 활성화될 때 상태 표시·버튼 스타일·안내 문구가 함께 바뀝니다. 제품 요소가 없는 홈과 Freeware에서도 설정에 의한 오류가 발생하지 않습니다.
 

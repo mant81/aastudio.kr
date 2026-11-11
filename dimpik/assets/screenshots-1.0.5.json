@@ -1,0 +1,31 @@
+{
+  "version": "1.0.5",
+  "capturedDate": "2026-11-11",
+  "source": "실제 DIMPIK 1.0.5 편집기 실행 화면",
+  "sourceAssemblySha256": "c2b65ce37f0c3b98e71898bcd55b1ac50920a5e343721123f2e94e399191645a",
+  "exampleData": true,
+  "settingsCapture": "일반 설정 클라이언트 영역; 자동 실행 체크는 설치 기본 상태를 사용하며 레지스트리를 변경하지 않음",
+  "screenshots": [
+    {
+      "file": "dimpik-workspace-1.0.5.png",
+      "scenario": "탭 세 개, 번호·도형·화살표와 선택형 갤러리",
+      "width": 1586,
+      "height": 992,
+      "sha256": "7645a9850594a9e0452034e1bbaa9962fbf853a29dbde0f24d99751e0c3d3214"
+    },
+    {
+      "file": "dimpik-effects-1.0.5.png",
+      "scenario": "모자이크·블러 적용 및 효과 영역 선택",
+      "width": 1586,
+      "height": 992,
+      "sha256": "303cbbae6f19c06cd5826527ffabfb85323b3f3cbd6a271adf015f81c39f108a"
+    },
+    {
+      "file": "dimpik-settings-1.0.5.png",
+      "scenario": "일반 설정: 자동 실행 체크, 갤러리 기본 숨김",
+      "width": 580,
+      "height": 560,
+      "sha256": "a4c6dd0e1f93364b0cb317b84aecd6cc7c385b79fa39a0f670f1d5981052eae7"
+    }
+  ]
+}

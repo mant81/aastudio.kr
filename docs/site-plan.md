@@ -39,11 +39,11 @@ AASTUDIO.KR을 세 스튜디오의 상위 브랜드 사이트로 구성합니다
 | Studios | AA Studio, AI Studio, ASF Studio 소개 |
 | 홈 하단 | Products·Freeware 목록으로 이동하는 짧은 안내 |
 | `/products/` | AA Studio 개발·다운로드 상태, Diagram·Database Modeling 웹 도구 |
-| `/freeware/` | ASnapdo 소개와 Windows 무료 다운로드 |
-| `/asnapdo/` | ASnapdo 기능·설치 안내, 변경이력 탭 |
+| `/freeware/` | DIMPIK 소개와 Windows 무료 다운로드 |
+| `/dimpik/` | DIMPIK 기능·설치 안내, 변경이력 탭 |
 | 푸터 | 브랜드 문구, 연락처 `mant@nate.com`, 저작권 연도, 상단 이동 |
 
-홈은 스튜디오 소개에 집중하고, 제품과 무료 소프트웨어의 목록은 독립 페이지로 제공합니다. Products에는 AA Studio와 설계용 웹 도구, Freeware에는 ASnapdo를 배치합니다. ASnapdo 상세 화면은 공통 사이트 메뉴와 제품 탭으로 구성하고 별도 경로 메뉴는 중복 노출하지 않습니다.
+홈은 스튜디오 소개에 집중하고, 제품과 무료 소프트웨어의 목록은 독립 페이지로 제공합니다. Products에는 AA Studio와 설계용 웹 도구, Freeware에는 DIMPIK를 배치합니다. DIMPIK 상세 화면은 공통 사이트 메뉴와 제품 탭으로 구성하고 별도 경로 메뉴는 중복 노출하지 않습니다.
 
 ## 모션과 연락처
 
