@@ -27,17 +27,16 @@ python3 -m http.server 8000 --bind 0.0.0.0
 기존 `aastudio.kr` 사이트는 네트워크 접근 제한으로 내용을 가져오지 못했습니다. 현재 페이지는 대화에서 정한 브랜드 구성에 따라 새로 작성한 초안입니다.
 
 
-## DIMPIK 1.0.5 — 2026-11-11
+## DIMPIK 1.0.6 — 2026-11-12
 
 - 제품 설명: `dimpik/index.html` (`/dimpik/`)
 - 변경이력: `dimpik/changelog/index.html` (`/dimpik/changelog/`)
-- 설치 파일: [DIMPIK 1.0.5 다운로드](https://github.com/mant81/DIMPIK/releases/download/v1.0.5/dimpik_inst_x64_1.0.5.exe)
-- 릴리즈: [GitHub Releases](https://github.com/mant81/DIMPIK/releases/)
-- 릴리즈 메타데이터와 SHA-256: `release/dimpik-1.0.5.json`
+- 설치 파일: [DIMPIK 1.0.6 다운로드](https://github.com/mant81/DIMPIK/releases/download/v1.0.6/dimpik_inst_x64_1.0.6.exe)
+- 릴리즈: [GitHub Releases](https://github.com/mant81/DIMPIK/releases/tag/v1.0.6)
+- 릴리즈 메타데이터와 SHA-256: `release/dimpik-1.0.6.json`
 - 개인·기업·관공서 무료, 제작사 AAStudio.kr
 
-홈에 DIMPIK 제품 영역을 추가하고 Pages 배포 대상에 `dimpik/`와 `release/`를 포함했습니다. 기본 설치 폴더는 `C:\Program Files\DIMPIK`입니다. 세부 구성과 검증 범위는 [제품 페이지 운영 문서](docs/dimpik-product.md)를 참고하세요. 1.0.5에서는 제목 표시줄·메뉴·문서 탭·색상표·상태표시줄과 복원 창 배치를 개선했습니다.
-
+1.0.6은 로그인 자동 실행을 체크 즉시 적용하고, 모자이크 기본 크기와 도움말 업데이트 안내를 개선했습니다. 기능 스모크와 세션·메모리 검사는 통과했으며 설치 파일은 미서명입니다. 설치·제거 반복 검사는 관리 환경의 권한 제한으로 완료하지 못했습니다.
 ## 페이지 탐색
 
 - `/`: 세 스튜디오 소개와 목록 페이지 진입점.
